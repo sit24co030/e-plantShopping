@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProductList from "./components/ProductList";
@@ -7,21 +7,29 @@ import AboutUs from "./components/AboutUs";
 import "./App.css";
 
 function Home() {
+  const [showProductList, setShowProductList] = useState(false);
+
+  if (showProductList) {
+    return <ProductList />;
+  }
+
   return (
-    <div className="landing-page">
-      <div className="landing-content">
-        <h1>Paradise Nursery</h1>
-
-        <h2>Bring Nature Into Your Home</h2>
-
-        <p>
-          Discover beautiful houseplants and create your own
-          peaceful green paradise.
-        </p>
-
-        <Link to="/plants" className="primary-button">
-          Get Started
-        </Link>
+    <div className="app-container">
+      <div className="background-image">
+        <div className="landing-content">
+          <h1>Welcome To Paradise Nursery</h1>
+          <h2>Bring Nature Into Your Home</h2>
+          <p>
+            Discover beautiful houseplants and create your own
+            peaceful green paradise.
+          </p>
+          <button
+            className="primary-button"
+            onClick={() => setShowProductList(true)}
+          >
+            Get Started
+          </button>
+        </div>
       </div>
     </div>
   );
