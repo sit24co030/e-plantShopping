@@ -1,21 +1,30 @@
-<<<<<<< HEAD
-# React + Vite
+# Paradise Nursery Shopping Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Description
+Paradise Nursery is an online plant shopping application developed using React and Redux. Users can browse houseplants, view plant images and prices, add plants to their cart, update quantities, remove items, and view the total cost.
 
-Currently, two official plugins are available:
+## Features
+- Home page with a Get Started button
+- Plant categories with plant images, names, and prices
+- Add to Cart functionality
+- Dynamic shopping cart item count
+- Increase and decrease item quantities
+- Remove items from the cart
+- Automatic subtotal and total calculation
+- Checkout Coming Soon message
+- Continue Shopping navigation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Technologies Used
+- React
+- Redux Toolkit
+- React Redux
+- React Router DOM
+- Vite
+- CSS
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# paradise-nursery-shopping-app
-Paradise Nursery Shopping Application using React and Redux
->>>>>>> 3cb15491d4041d2af6fe97678eb0bef10b90de7d
+## How to Run
+1. Install Node.js.
+2. Open the project folder in CMD.
+3. Run `npm install`.
+4. Run `npm run dev`.
+5. Open the local URL shown in the terminal.
