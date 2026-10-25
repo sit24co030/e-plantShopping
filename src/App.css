@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #243329;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 18px 6%;
+  background: #164b35;
+  color: white;
+}
+
+.nav-brand {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.navbar a:hover {
+  color: #c5efc7;
+}
+
+.landing-page {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)),
+    url("https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1800&q=85")
+      center / cover no-repeat;
+  color: white;
+}
+
+.landing-content {
+  max-width: 700px;
+  text-align: center;
+}
+
+.landing-content h1 {
+  font-size: clamp(40px, 7vw, 68px);
+  margin-bottom: 15px;
+}
+
+.landing-content h2 {
+  font-size: clamp(22px, 4vw, 34px);
+}
+
+.landing-content p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.primary-button {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 8px;
+  background: #2d8a50;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.primary-button:hover {
+  background: #21683b;
+}
+
+.about-section {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+  line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    justify-content: center;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 16px;
+  }
+}

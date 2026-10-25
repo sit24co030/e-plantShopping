@@ -1,0 +1,114 @@
+
+.product-page {
+  max-width: 1400px;
+  margin: auto;
+  padding: 30px 5%;
+}
+
+.product-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.product-header h1 {
+  color: #164b35;
+  font-size: 36px;
+}
+
+.product-header p {
+  color: #647067;
+  font-size: 17px;
+}
+
+.plant-category {
+  margin-bottom: 50px;
+}
+
+.plant-category h2 {
+  color: #164b35;
+  border-bottom: 2px solid #d6e8d7;
+  padding-bottom: 12px;
+  margin-bottom: 25px;
+}
+
+.plant-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.plant-card {
+  overflow: hidden;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.plant-card:hover {
+  transform: translateY(-4px);
+}
+
+.plant-image {
+  display: block;
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  background: #edf3ec;
+}
+
+.plant-details {
+  padding: 18px;
+}
+
+.plant-details h3 {
+  margin-top: 0;
+  color: #164b35;
+}
+
+.plant-description {
+  min-height: 42px;
+  color: #647067;
+  line-height: 1.5;
+}
+
+.plant-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #246c3d;
+}
+
+.add-to-cart-button {
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  color: white;
+  background: #287846;
+  font-weight: bold;
+}
+
+.add-to-cart-button:hover:not(:disabled) {
+  background: #195b32;
+}
+
+.add-to-cart-button:disabled {
+  background: #929b94;
+  cursor: not-allowed;
+}
+
+@media (max-width: 900px) {
+  .plant-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 550px) {
+  .plant-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-header h1 {
+    font-size: 28px;
+  }
+}
