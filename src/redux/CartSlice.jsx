@@ -1,3 +1,4 @@
+
 import { createSlice } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
@@ -6,17 +7,59 @@ const cartSlice = createSlice({
     items: [],
   },
   reducers: {
+    addItem: (state, action) => {
+      const product = action.payload;
+      const existingItem = state.items.find(
+        (item) => item.id === product.id
+      );
+
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        state.items.push({
+          ...product,
+          quantity: 1,
+        });
+      }
+    },
+
+    removeItem: (state, action) => {
+      const id =
+        typeof action.payload === "object"
+          ? action.payload.id
+          : action.payload;
+
+      state.items = state.items.filter(
+        (item) => item.id !== id
+      );
+    },
+
+    updateQuantity: (state, action) => {
+      const { id, quantity } = action.payload;
+      const item = state.items.find(
+        (item) => item.id === id
+      );
+
+      if (item && quantity > 0) {
+        item.quantity = quantity;
+      } else if (item && quantity <= 0) {
+        state.items = state.items.filter(
+          (item) => item.id !== id
+        );
+      }
+    },
+
+    // Keep compatibility with existing components
     addToCart: (state, action) => {
       const product = action.payload;
       const existingItem = state.items.find(
         (item) => item.id === product.id
       );
 
-      if (!existingItem) {
-        state.items.push({
-          ...product,
-          quantity: 1,
-        });
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        state.items.push({ ...product, quantity: 1 });
       }
     },
 
@@ -25,9 +68,7 @@ const cartSlice = createSlice({
         (item) => item.id === action.payload
       );
 
-      if (item) {
-        item.quantity += 1;
-      }
+      if (item) item.quantity += 1;
     },
 
     decreaseQuantity: (state, action) => {
@@ -53,6 +94,9 @@ const cartSlice = createSlice({
 });
 
 export const {
+  addItem,
+  removeItem,
+  updateQuantity,
   addToCart,
   increaseQuantity,
   decreaseQuantity,
