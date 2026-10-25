@@ -115,3 +115,28 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+/* Make the welcome page text clear */
+.landing-content {
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.65);
+}
+
+.landing-content h1 {
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.landing-content h2,
+.landing-content p {
+  color: #ffffff;
+}
+
+.landing-content button {
+  background-color: #65a30d;
+  color: #ffffff;
+  border: none;
+  font-weight: bold;
+}
